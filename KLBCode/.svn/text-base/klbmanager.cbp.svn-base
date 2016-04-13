@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="klbmanager" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="General/Library/Cipher/;General/Library/Rpc/;General/Base/;General/;General/Share/;General/Share/;General/Library/Xml/;General/Library/Licence/;General/;General/Share/;Model/;Model/Base/;Network/Interface/;Network/Arp/;Services/BIND/;Network/BlackList/;Services/IPVS/;Services/ISP/;Network/Nat/;Network/General/;Network/Route/;System/;Services/HVS/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/klbmanager" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug/" />
+				<Option object_output="obj/Debug/klbmanager" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D__DEBUG__" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/klbmanager" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Release/" />
+				<Option object_output="obj/Release/klbmanager" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-D__RELEASE__" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-Werror" />
+			<Add option="-DTIXML_USE_STL" />
+			<Add option="-D__SERVER__" />
+		</Compiler>
+		<Linker>
+			<Add library="crypto" />
+			<Add library="pthread" />
+		</Linker>
+		<ExtraCommands>
+			<Add before="./premake" />
+		</ExtraCommands>
+		<Unit filename="Information">
+			<Option virtualFolder="General/" />
+		</Unit>
+		<Unit filename="src/cipher/cipher.h">
+			<Option virtualFolder="General/Library/Cipher/" />
+		</Unit>
+		<Unit filename="src/cipher/convert.cpp">
+			<Option virtualFolder="General/Library/Cipher/" />
+		</Unit>
+		<Unit filename="src/cipher/key.cpp">
+			<Option virtualFolder="General/Library/Cipher/" />
+		</Unit>
+		<Unit filename="src/licence/licence.cpp">
+			<Option virtualFolder="General/Library/Licence/" />
+		</Unit>
+		<Unit filename="src/licence/licence.h">
+			<Option virtualFolder="General/Library/Licence/" />
+		</Unit>
+		<Unit filename="src/model/adsl.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/arp.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/bind.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/blacklist.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/exception.h">
+			<Option virtualFolder="Model/Base/" />
+		</Unit>
+		<Unit filename="src/model/hvs.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/interface.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/ipvs.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/isp.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/model.h">
+			<Option virtualFolder="Model/Base/" />
+		</Unit>
+		<Unit filename="src/model/nat.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/network.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/route.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/system.h">
+			<Option virtualFolder="Model/" />
+		</Unit>
+		<Unit filename="src/model/types.cpp">
+			<Option virtualFolder="Model/Base/" />
+		</Unit>
+		<Unit filename="src/model/types.h">
+			<Option virtualFolder="Model/Base/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpc.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcClient.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcClient.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcDispatch.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcDispatch.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcException.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcServer.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcServer.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcServerConnection.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcServerConnection.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcServerMethod.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcServerMethod.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcSocket.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcSocket.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcSource.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcSource.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcUtil.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcUtil.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcValue.cpp">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/XmlRpcValue.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/rpc/base64.h">
+			<Option virtualFolder="General/Library/Rpc/" />
+		</Unit>
+		<Unit filename="src/server/adsl.cpp">
+			<Option virtualFolder="Network/Interface/" />
+		</Unit>
+		<Unit filename="src/server/adsl.h">
+			<Option virtualFolder="Network/Interface/" />
+		</Unit>
+		<Unit filename="src/server/arp.cpp">
+			<Option virtualFolder="Network/Arp/" />
+		</Unit>
+		<Unit filename="src/server/arp.h">
+			<Option virtualFolder="Network/Arp/" />
+		</Unit>
+		<Unit filename="src/server/base.cpp">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/base.h">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/bind.cpp">
+			<Option virtualFolder="Services/BIND/" />
+		</Unit>
+		<Unit filename="src/server/bind.h">
+			<Option virtualFolder="Services/BIND/" />
+		</Unit>
+		<Unit filename="src/server/blacklist.cpp">
+			<Option virtualFolder="Network/BlackList/" />
+		</Unit>
+		<Unit filename="src/server/blacklist.h">
+			<Option virtualFolder="Network/BlackList/" />
+		</Unit>
+		<Unit filename="src/server/bonding.cpp">
+			<Option virtualFolder="Network/Interface/" />
+		</Unit>
+		<Unit filename="src/server/bonding.h">
+			<Option virtualFolder="Network/Interface/" />
+		</Unit>
+		<Unit filename="src/server/ethernet.cpp">
+			<Option virtualFolder="Network/Interface/" />
+		</Unit>
+		<Unit filename="src/server/ethernet.h">
+			<Option virtualFolder="Network/Interface/" />
+		</Unit>
+		<Unit filename="src/server/ha.cpp">
+			<Option virtualFolder="Services/IPVS/" />
+		</Unit>
+		<Unit filename="src/server/ha.h">
+			<Option virtualFolder="Services/IPVS/" />
+		</Unit>
+		<Unit filename="src/server/hvs.cpp">
+			<Option virtualFolder="Services/HVS/" />
+		</Unit>
+		<Unit filename="src/server/hvs.h">
+			<Option virtualFolder="Services/HVS/" />
+		</Unit>
+		<Unit filename="src/server/interface.cpp">
+			<Option virtualFolder="Network/Interface/" />
+		</Unit>
+		<Unit filename="src/server/interface.h">
+			<Option virtualFolder="Network/Interface/" />
+		</Unit>
+		<Unit filename="src/server/isp.cpp">
+			<Option virtualFolder="Services/ISP/" />
+		</Unit>
+		<Unit filename="src/server/isp.h">
+			<Option virtualFolder="Services/ISP/" />
+		</Unit>
+		<Unit filename="src/server/logger.cpp">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/logger.h">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/main.cpp">
+			<Option virtualFolder="General/" />
+		</Unit>
+		<Unit filename="src/server/nat.cpp">
+			<Option virtualFolder="Network/Nat/" />
+		</Unit>
+		<Unit filename="src/server/nat.h">
+			<Option virtualFolder="Network/Nat/" />
+		</Unit>
+		<Unit filename="src/server/network.cpp">
+			<Option virtualFolder="Network/General/" />
+		</Unit>
+		<Unit filename="src/server/network.h">
+			<Option virtualFolder="Network/General/" />
+		</Unit>
+		<Unit filename="src/server/policyroute.cpp">
+			<Option virtualFolder="Network/Route/" />
+		</Unit>
+		<Unit filename="src/server/policyroute.h">
+			<Option virtualFolder="Network/Route/" />
+		</Unit>
+		<Unit filename="src/server/recorder.cpp">
+			<Option virtualFolder="Services/IPVS/" />
+		</Unit>
+		<Unit filename="src/server/recorder.h">
+			<Option virtualFolder="Services/IPVS/" />
+		</Unit>
+		<Unit filename="src/server/route.cpp">
+			<Option virtualFolder="Network/Route/" />
+		</Unit>
+		<Unit filename="src/server/route.h">
+			<Option virtualFolder="Network/Route/" />
+		</Unit>
+		<Unit filename="src/server/rpc.cpp">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/rpc.h">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/serialize.cpp">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/serialize.h">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/services.cpp">
+			<Option virtualFolder="Services/IPVS/" />
+		</Unit>
+		<Unit filename="src/server/services.h">
+			<Option virtualFolder="Services/IPVS/" />
+		</Unit>
+		<Unit filename="src/server/smartroute.cpp">
+			<Option virtualFolder="Network/Route/" />
+		</Unit>
+		<Unit filename="src/server/smartroute.h">
+			<Option virtualFolder="Network/Route/" />
+		</Unit>
+		<Unit filename="src/server/staticroute.cpp">
+			<Option virtualFolder="Network/Route/" />
+		</Unit>
+		<Unit filename="src/server/staticroute.h">
+			<Option virtualFolder="Network/Route/" />
+		</Unit>
+		<Unit filename="src/server/system.cpp">
+			<Option virtualFolder="System/" />
+		</Unit>
+		<Unit filename="src/server/system.h">
+			<Option virtualFolder="System/" />
+		</Unit>
+		<Unit filename="src/server/wdt.cpp">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/server/wdt.h">
+			<Option virtualFolder="General/Base/" />
+		</Unit>
+		<Unit filename="src/share/debug.cpp">
+			<Option virtualFolder="General/Share/" />
+		</Unit>
+		<Unit filename="src/share/debug.h">
+			<Option virtualFolder="General/Share/" />
+		</Unit>
+		<Unit filename="src/share/include.h">
+			<Option virtualFolder="General/Share/" />
+		</Unit>
+		<Unit filename="src/share/utility.h">
+			<Option virtualFolder="General/Share/" />
+		</Unit>
+		<Unit filename="src/share/version">
+			<Option virtualFolder="General/" />
+		</Unit>
+		<Unit filename="src/xml/tinystr.cpp">
+			<Option virtualFolder="General/Library/Xml/" />
+		</Unit>
+		<Unit filename="src/xml/tinystr.h">
+			<Option virtualFolder="General/Library/Xml/" />
+		</Unit>
+		<Unit filename="src/xml/tinyxml.cpp">
+			<Option virtualFolder="General/Library/Xml/" />
+		</Unit>
+		<Unit filename="src/xml/tinyxml.h">
+			<Option virtualFolder="General/Library/Xml/" />
+		</Unit>
+		<Unit filename="src/xml/tinyxmlerror.cpp">
+			<Option virtualFolder="General/Library/Xml/" />
+		</Unit>
+		<Unit filename="src/xml/tinyxmlparser.cpp">
+			<Option virtualFolder="General/Library/Xml/" />
+		</Unit>
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<lib_finder disable_auto="1" />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

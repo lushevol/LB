@@ -1,0 +1,136 @@
+$(shell ./premake)
+
+SHARE:=$(notdir $(shell echo src/share/*.cpp))
+SHARE:=$(addprefix share/,$(SHARE))
+CLIENT:=$(notdir $(shell echo src/client/*.cpp))
+CLIENT:=$(addprefix client/,$(CLIENT))
+SERVER:=$(notdir $(shell echo src/server/*.cpp))
+SERVER:=$(addprefix server/,$(SERVER))
+MODEL:=$(notdir $(shell echo src/model/*.cpp))
+MODEL:=$(addprefix model/,$(MODEL))
+RPC:=$(notdir $(shell echo src/rpc/*.cpp))
+RPC:=$(addprefix rpc/,$(RPC))
+XML:=$(notdir $(shell echo src/xml/*.cpp))
+XML:=$(addprefix xml/,$(XML))
+CIPHER:=$(notdir $(shell echo src/cipher/*.cpp))
+CIPHER:=$(addprefix cipher/,$(CIPHER))
+PACKAGE:=$(notdir $(shell echo src/package/*.cpp))
+PACKAGE:=$(addprefix package/,$(PACKAGE))
+LICENCE:=$(notdir $(shell echo src/licence/*.cpp))
+LICENCE:=$(addprefix licence/,$(LICENCE))
+ROUTE:=$(notdir $(shell echo src/route/*.cpp))
+ROUTE:=$(addprefix route/,$(ROUTE))
+
+CC:=g++
+DEFINE:=-DTIXML_USE_STL
+FLAGS:=-Wall -fexceptions -Werror -I/usr/src/linux/include
+LINK:=
+
+DEFINE_RELEASE:=-D__RELEASE__ -DNDEBUG
+FLAGS_RELEASE:=-O3
+LINK_RELEASE:=-s
+
+DEFINE_DEBUG:=-D__DEBUG__
+FLAGS_DEBUG:=-g
+LINK_DEBUG:=-lpthread
+
+BIN_CLIENT:=klbclient
+LIBS_CLIENT:=-lreadline -lncurses
+DEFINE_CLIENT:=-D__CLIENT__
+SOURCES_CLIENT:=$(CLIENT) $(RPC) $(MODEL) $(XML) $(SHARE)
+
+BIN_SERVER:=klbmanager
+LIBS_SERVER:=-lrt -lpthread -lcrypto
+DEFINE_SERVER:=-D__SERVER__
+SOURCES_SERVER:=$(SERVER) $(MODEL) $(RPC) $(XML) $(CIPHER) $(LICENCE) $(SHARE)
+
+BIN_PACKAGE:=klbpackage
+LIBS_PACKAGE:=-lrt -lpthread -lcrypto
+DEFINE_PACKAGE:=-D__GENERATOR__
+SOURCES_PACKAGE:=$(PACKAGE) $(CIPHER) $(LICENCE) $(SHARE)
+
+BIN_ROUTE:=klbroute
+LIBS_ROUTE:=-lrt
+DEFINE_ROUTE:=
+SOURCES_ROUTE:=$(ROUTE) $(SHARE)
+
+.PHONY:all
+all: \
+    klbmanager_release klbmanager_debug \
+    klbclient_release klbclient_debug \
+    klbpackage_release klbpackage_debug \
+    klbroute_release klbroute_debug
+
+.PHONY:klbmanager_release
+klbmanager_release:
+	make -f make.do \
+	-e BIN:=$(BIN_SERVER) TARGET:=Release DEFINE:="$(DEFINE) $(DEFINE_SERVER) $(DEFINE_RELEASE)" \
+	LIBS:="$(LIBS_SERVER)" CC:="g++" SOURCES:="$(SOURCES_SERVER)" \
+	CPPFLAGS:="$(FLAGS) $(FLAGS_RELEASE)" \
+	LINKFLAGS:="$(LINK_RELEASE) $(LINK)"
+
+.PHONY:klbclient_release
+klbclient_release:
+	make -f make.do \
+	-e BIN:=$(BIN_CLIENT) TARGET:=Release DEFINE:="$(DEFINE) $(DEFINE_CLIENT) $(DEFINE_RELEASE)" \
+	LIBS:="$(LIBS_CLIENT)" CC:="g++" SOURCES:="$(SOURCES_CLIENT)" \
+	CPPFLAGS:="$(FLAGS) $(FLAGS_RELEASE)" \
+	LINKFLAGS:="$(LINK_RELEASE) $(LINK)"
+
+.PHONY:klbpackage_release
+klbpackage_release:
+	make -f make.do \
+	-e BIN:=$(BIN_PACKAGE) TARGET:=Release DEFINE:="$(DEFINE) $(DEFINE_PACKAGE) $(DEFINE_RELEASE)" \
+	LIBS:="$(LIBS_PACKAGE)" CC:="g++" SOURCES:="$(SOURCES_PACKAGE)" \
+	CPPFLAGS:="$(FLAGS) $(FLAGS_RELEASE)" \
+	LINKFLAGS:="$(LINK_RELEASE) $(LINK)"
+
+.PHONY:klbroute_release
+klbroute_release:
+	make -f make.do \
+	-e BIN:=$(BIN_ROUTE) TARGET:=Release DEFINE:="$(DEFINE) $(DEFINE_ROUTE) $(DEFINE_RELEASE)" \
+	LIBS:="$(LIBS_ROUTE)" CC:="g++" SOURCES:="$(SOURCES_ROUTE)" \
+	CPPFLAGS:="$(FLAGS) $(FLAGS_RELEASE)" \
+	LINKFLAGS:="$(LINK_RELEASE) $(LINK)"
+
+.PHONY:klbmanager_debug
+klbmanager_debug:
+	make -f make.do \
+	-e BIN:=$(BIN_SERVER) TARGET:=Debug DEFINE:="$(DEFINE) $(DEFINE_SERVER) $(DEFINE_DEBUG)" \
+	LIBS:="$(LIBS_SERVER)" CC:="g++" SOURCES:="$(SOURCES_SERVER)" \
+	CPPFLAGS:="$(FLAGS) $(FLAGS_DEBUG)" \
+	LINKFLAGS:="$(LINK_DEBUG) $(LINK)"
+
+.PHONY:klbclient_debug
+klbclient_debug:
+	make -f make.do \
+	-e BIN:=$(BIN_CLIENT) TARGET:=Debug DEFINE:="$(DEFINE) $(DEFINE_CLIENT) $(DEFINE_DEBUG)" \
+	LIBS:="$(LIBS_CLIENT)" CC:="g++" SOURCES:="$(SOURCES_CLIENT)" \
+	CPPFLAGS:="$(FLAGS) $(FLAGS_DEBUG)" \
+	LINKFLAGS:="$(LINK_DEBUG) $(LINK)"
+
+.PHONY:klbpackage_debug
+klbpackage_debug:
+	make -f make.do \
+	-e BIN:=$(BIN_PACKAGE) TARGET:=Debug DEFINE:="$(DEFINE) $(DEFINE_PACKAGE) $(DEFINE_DEBUG)" \
+	LIBS:="$(LIBS_PACKAGE)" CC:="g++" SOURCES:="$(SOURCES_PACKAGE)" \
+	CPPFLAGS:="$(FLAGS) $(FLAGS_DEBUG)" \
+	LINKFLAGS:="$(LINK_DEBUG) $(LINK)"
+
+.PHONY:klbroute_debug
+klbroute_debug:
+	make -f make.do \
+	-e BIN:=$(BIN_ROUTE) TARGET:=Debug DEFINE:="$(DEFINE) $(DEFINE_ROUTE) $(DEFINE_DEBUG)" \
+	LIBS:="$(LIBS_ROUTE)" CC:="g++" SOURCES:="$(SOURCES_ROUTE)" \
+	CPPFLAGS:="$(FLAGS) $(FLAGS_DEBUG)" \
+	LINKFLAGS:="$(LINK_DEBUG) $(LINK)"
+
+.PHONY:update
+update:
+	cp -f bin/Release/* /sbin/
+	cp -f src/adslcmd/* /sbin/
+.PHONY:clean
+clean:
+	rm -rf bin
+	rm -rf obj
+	rm -rf /sbin/lb_adsl-*

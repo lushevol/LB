@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="工作空间">
+		<Project filename="klbmanager.cbp" active="1" />
+		<Project filename="klbclient.cbp" />
+		<Project filename="klbpackage.cbp" />
+		<Project filename="klbroute.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

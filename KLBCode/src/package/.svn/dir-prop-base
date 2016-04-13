@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 28
+*.save
+licence
+share
+cipher
+
+END

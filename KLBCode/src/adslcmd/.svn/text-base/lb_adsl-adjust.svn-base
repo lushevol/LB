@@ -1,0 +1,75 @@
+
+#!/bin/sh
+
+PATH=$PATH:$USRCMDPATH:$SYSCMDPATH 
+
+prog="adsl-adjust"
+usage() {
+	echo "Usage :"
+	echo -e "\t $prog del|--del ifname"
+	echo -e "\t $prog add|--add ifname phydev"
+	echo -e "\t $prog fix|--fix ifname phydev"
+	echo -e "\t $prog --help"
+	
+}
+del_pppoe_conf() {
+	if [ $# -ne 1 ]
+	then
+		echo "Usage: $prog del ifname"
+		return 1
+	fi
+	IFACE="$1"
+	rm -f /etc/ppp/pppoe-$IFACE.conf
+	rm -f /etc/ppp/pppoe-$IFACE.conf.bak
+}
+add_pppoe_conf() {
+	if [ $# -ne 2 ]
+	then
+		echo "Usage: $prog fix ppp_ifname adsl_iface"
+		return 1
+	fi
+	IFACE="$1"
+	PHYDEV="$2"
+	CONFIG=/etc/ppp/pppoe-$IFACE.conf
+	if [ ! -f $CONFIG ]
+	then
+		cp /etc/ppp/pppoe-demo.conf $CONFIG -f
+	fi
+	fix_pppoe_conf $IFACE $PHYDEV
+}
+
+fix_pppoe_conf() {
+	if [ $# -ne 2 ]
+	then
+		echo "Usage: $prog fix ppp_ifname adsl_iface"
+		return 1
+	fi
+	iface="$1"
+	phydev="$2"
+	config=/etc/ppp/pppoe-$phydev.conf
+	cp $config $config.bak
+	if [ ! -f $CONFIG ]
+	then
+		echo "$config NOT exits!"
+		echo "create $config"
+	fi
+	sed -e "s&^ETH=.*&ETH='$phydev'&" < $config.bak > $config
+	cp $config $config.bak
+	sed -e "s&^DEVICE=.*&DEVICE='$iface'&" < $config.bak > $config
+}
+
+case	"$1" in
+	del|--del)
+		shift ;	del_pppoe_conf $@ ; exit $?
+	;;
+	add|--add)
+		shift ;	add_pppoe_conf $@ ; exit $?
+		;;
+	fix|--fix)
+		shift ; fix_pppoe_conf $@ || exit $?
+		;;
+	*)	usage ; exit 1
+		;;
+esac
+
+

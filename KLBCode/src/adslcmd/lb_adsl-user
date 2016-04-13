@@ -1,0 +1,13 @@
+PATH=$PATH:$SYSCMDPATH
+
+if [ $# -ne 1 ]
+then
+	echo "Usage: $0 ifname"
+	exit 1;
+fi
+IFACE="$1"
+CONFIG=/etc/ppp/pppoe-$IFACE.conf
+echo "-----------"
+cat $CONFIG 2>/dev/null | grep "USER="
+echo "-----------"
+

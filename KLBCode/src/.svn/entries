@@ -1,0 +1,61 @@
+10
+
+dir
+2144
+svn://172.19.80.71/klb-64/src
+svn://172.19.80.71
+
+
+
+2012-03-24T07:43:56.883562Z
+2143
+wyc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13431d10-e285-4db9-a0ac-25f8ace905ed
+
+model
+dir
+
+xml
+dir
+
+licence
+dir
+
+share
+dir
+
+rpc
+dir
+
+server
+dir
+
+adslcmd
+dir
+
+cipher
+dir
+
+package
+dir
+
+client
+dir
+
+route
+dir
+

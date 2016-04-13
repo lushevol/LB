@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="klbroute" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Share/;Source/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/klbroute" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug/" />
+				<Option object_output="obj/Debug/klbroute/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="static 3 test.isp" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D__DEBUG__" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/klbroute" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Release/" />
+				<Option object_output="obj/Release/klbroute/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-D__RELEASE__" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-Werror" />
+		</Compiler>
+		<ExtraCommands>
+			<Add before="./premake" />
+		</ExtraCommands>
+		<Unit filename="src/route/libarg.cpp">
+			<Option virtualFolder="Source/" />
+		</Unit>
+		<Unit filename="src/route/libarg.h">
+			<Option virtualFolder="Source/" />
+		</Unit>
+		<Unit filename="src/route/libstatic.cpp">
+			<Option virtualFolder="Source/" />
+		</Unit>
+		<Unit filename="src/route/libstatic.h">
+			<Option virtualFolder="Source/" />
+		</Unit>
+		<Unit filename="src/route/main.cpp">
+			<Option virtualFolder="Source/" />
+		</Unit>
+		<Unit filename="src/share/debug.cpp">
+			<Option virtualFolder="Share/" />
+		</Unit>
+		<Unit filename="src/share/debug.h">
+			<Option virtualFolder="Share/" />
+		</Unit>
+		<Unit filename="src/share/include.h">
+			<Option virtualFolder="Share/" />
+		</Unit>
+		<Unit filename="src/share/utility.h">
+			<Option virtualFolder="Share/" />
+		</Unit>
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<lib_finder disable_auto="1" />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
