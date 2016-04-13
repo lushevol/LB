@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root> 
+  <User> 
+    <Id>1</Id>  
+    <LoginName>admin</LoginName>  
+    <UserName>admin</UserName>  
+    <PassWord> </PassWord>  
+    <Email>zxm@kylinos.com.cn</Email>
+    <Guide>1</Guide>  
+    <Auth>admin</Auth> 
+  </User>    
+</Root>

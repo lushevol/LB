@@ -1,0 +1,31 @@
+.form p.buttonWrapper1{
+	margin:32px 0 0 12px;
+	background:url(../images/common/bg_buttonlogin1.gif) top left no-repeat;
+	width:85px;
+	height:56px;
+}
+
+.form p.buttonWrapper1 input{
+	width:85px;
+	height:28px;
+	background:transparent;
+	text-indent:-9999em;
+	overflow:hidden;
+	cursor:pointer;
+	float:left;
+	*margin-left:-10px;
+}
+
+.form p span.input1,.form p span.inputYzm{
+	clear:left;
+}
+.form p span.input1{
+	width:280px;
+	height:26px;
+	background:url(../images/common/bg_input1.gif) 0 0 no-repeat;
+}
+.form p span.input1 input{
+	background-color:#fff;
+	margin:2px;
+	width:270px;
+}

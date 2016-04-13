@@ -1,0 +1,116 @@
+@charset "utf-8";
+/*************************************
+* content:login css
+************************************/
+/* CSS Document */
+body{
+	margin:0;
+	padding:0;
+	width:100%;
+	font-size:12px;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif,宋体;
+	background:#fff url(../images/common/bg_login.jpg) top left repeat-x;
+}
+h1,h2,p{
+	margin:0;
+	padding:0;
+}
+.login{
+	width:884px;
+	margin:95px auto 0 auto;
+	height:480px;
+	text-align:left;
+	background:url(../images/common/bg_loginform.gif) 430px 0 no-repeat;
+}
+a{
+	color:#6d914f;
+	text-decoration:none;
+}
+a:hover{
+	color:#6d914f;
+	text-decoration:underline;
+}
+input{
+	border:0;
+}
+.system{
+	float:left;
+	width:430px;
+	height:470px;
+	/*background:url(../images/common/welcome_kylin.jpg) 0 40px no-repeat;*/
+}
+.system h1{
+	height:63px;
+	width:330px;
+	text-indent:-9999em;
+	overflow:hidden;
+	float:left;
+}
+/*表单*/
+.form{
+	float:left;
+	width:292px;
+	margin-top:75px;
+	padding-left:26px;
+}
+.form h2{
+	color:#424242;
+	font-size:14px;
+	padding:0 0 10px 7px;
+	margin-bottom:10px;
+	border-bottom:1px solid #e0e0e0;
+}
+.form label{
+	color:#424242;
+	clear:left;
+	float:left;
+	width:80%;
+	margin:14px 0 0 10px;
+}
+.form p{
+	clear:left;
+	float:left;
+	*float:none;
+	width:100%;
+	margin:6px 0 0 10px;
+	color:#969696;
+}
+.form p span,.form p a{
+	float:left;
+}
+.form p span.input,.form p span.inputYzm{
+	clear:left;
+}
+.form p span.input{
+	width:184px;
+	height:24px;
+	background:url(../images/common/bg_input.gif) 0 0 no-repeat;
+}
+.form p span.input input{
+	background-color:#fff;
+	margin:2px;
+	width:178px;
+}
+.form p.buttonWrapper{
+	margin:32px 0 0 12px;
+	background:url(../images/common/bg_buttonlogin.gif) top left no-repeat;
+	width:85px;
+	height:56px;
+}
+.form p.buttonWrapper input{
+	width:85px;
+	height:28px;
+	background:transparent;
+	text-indent:-9999em;
+	overflow:hidden;
+	cursor:pointer;
+	float:left;
+	*margin-left:-10px;
+}
+.form_errors{
+	color:red;
+	font-weight:bold;
+	padding-left:10px;
+	height:15px;
+}

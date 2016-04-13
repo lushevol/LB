@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+	<journal title="XML Zone" publisher="IBM Devoloperment">
+		<article level="小学四年级" date="December-2008">
+			<title>又是下雨天</title>
+			<author>
+				<firstname>Marcello</firstname>
+				<lastname>Vitaletti</lastname>
+			</author>
+		</article>
+		<article level="大学四年级" date="2008-04-01">
+			<title>太阳出来了</title>
+			<author>
+				<firstname>Marcello</firstname>
+				<lastname>Vitaletti</lastname>
+			</author>
+		</article>
+	</journal>
+</catalog>

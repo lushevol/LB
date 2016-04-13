@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+	<Services>
+		<http1>
+			<Device value="mofan" />
+			<Enabled value="true" />
+			<IP value="172.19.80.79" />
+			<Interface value="eth0" />
+			<Mark value="1804289384" />
+			<Netmask value="255.255.0.0" />
+			<Persistent value="0" />
+			<PersistentNetmask value="255.255.255.255" />
+			<Schedule value="wrr" />
+			<Servers>
+				<mm-server>
+					<Action value="gate" />
+					<IP value="172.19.80.73" />
+					<Weight value="1" />
+				</mm-server>
+			</Servers>
+			<TCPPorts>
+				<Port min="80" max="80" />
+			</TCPPorts>
+			<UDPPorts>
+				<Port min="21" max="21" />
+			</UDPPorts>
+		</http1>
+	</Services>
+</Root>

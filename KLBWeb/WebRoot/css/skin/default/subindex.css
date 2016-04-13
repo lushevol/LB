@@ -1,0 +1,140 @@
+/*==== SubTitle ====*/
+.txtCont h4 a {
+	color:#0099DD;
+}
+.titleArea a {
+	color:#0099DD;
+}
+.titleArea {
+	float:left;
+}
+.titleArea ul {
+	float:left;
+}
+.titleArea ul li {
+	float:left;
+}
+.titleArea ul li.exit {
+	background:none;
+}
+
+/*====Color of TD====*/
+.main .table tr td {
+	color:#777;
+}
+
+/*====Color of TH And TD====*/
+.last .table tr th {
+	color:#777;
+}
+.last .table tr td {
+	color:#999;
+}
+
+/*====Style of Table====*/
+/* Input Width */
+.table .port .input {
+	width:50px;
+}
+/* Padding in Box3 */
+.box3 .table th {
+	padding:3px 1px 3px 3px;
+}
+.box3 .table td {
+	padding:3px 3px 3px 1px;
+}
+/* Bule Button Style */
+.btnBlue, .btnBlue span {
+	float:left;
+	line-height:25px;
+	height:25px;
+	cursor:pointer;
+	color:#333;
+	width:auto;
+	border:none;
+	padding:0;
+	background:url(../images/common/btn_bg.gif) 0 -120px no-repeat;
+	position:relative;
+}
+.btnBlue span {
+	padding:0 8px 0 2px;
+	margin:-2px -3px 0 3px;
+	margin:0\9 0\9 0 3px;
+	white-space:nowrap;
+	background-position:right -150px;
+}
+
+/*====ϵͳGray7 Of Table====*/
+.box3 .table td .gray7 {
+	color:#777;
+}
+
+/*====Input In Table Style====*/
+.box3 .table th .input {
+	float:right;
+}
+
+/*====Interface Physics====*/
+.gray7 {
+	color:#777;
+}
+div.mainPartContNoTop .txtCont div.physics {
+	width:840px;
+}
+
+/*====Interface Bond====*/
+table td .gray7 {
+	color:#777;
+}
+table td .ipInput {
+	width:100px;
+}
+div.mainPartContNoTop .txtCont div.bond {
+	width:870px;
+}
+
+/*==== Address ====*/
+div.mainPartContNoTop div.address {
+	width:890px;
+}
+/* Old Address SubTitle */
+.txtCont .black a {
+	color:#000000;
+}
+.gray9 {
+	color:#999;
+}
+.pL160 {
+	padding-left:160px;
+}
+
+/*====Route Policy====*/
+.mainPartContNoTop .policy .tableWrap {
+	width:920px;
+}
+
+/*====ADSL Style====*/
+.mainPartContNoTop .adsl {
+	width:850px;
+}
+
+/*====VirtualService Style====*/
+div.mainPartContNoTop div.sirtualServ {
+	width:920px;
+}
+.gray6 {
+	color:#666;
+}
+.w80 {
+	width:80px;
+}
+.w90 {
+	width:90px;
+}
+
+/*====TrueServer Style====*/
+div.mainPartContNoTop div.trueServ {
+	width:910px;
+}
+
+

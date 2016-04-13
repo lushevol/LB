@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<description>导入klb中的applicationContext文件列表，可随时通过注释disable不需要的模块
+	</description>
+	<!-- 
+	<import resource="plugs/applicationContext-email.xml" />
+	
+	<import resource="plugs/applicationContext-security.xml" />
+	<import resource="plugs/applicationContext-log.xml" />
+	
+	<import resource="plugs/applicationContext-security.xml" />
+
+	<import resource="plugs/jms/applicationContext-common.xml" />
+	<import resource="plugs/jms/applicationContext-consumer.xml" />
+	<import resource="plugs/jms/applicationContext-producer.xml" />
+	
+	<import resource="cache/applicationContext-ehcache.xml" />
+	<import resource="jmx/applicationContext-jmx-server.xml" />
+	<import resource="jmx/applicationContext-jmx-client.xml" />
+	
+	<import resource="schedule/applicationContext-quartz-cron-local.xml" />
+	<import resource="schedule/applicationContext-quartz-timer-cluster.xml" />
+	<import resource="schedule/applicationContext-executor.xml" />
+	
+	<import resource="webservice/applicationContext-cxf-server.xml" />
+	<import resource="webservice/applicationContext-hessian-server.xml" /> -->
+</beans>

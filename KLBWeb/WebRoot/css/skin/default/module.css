@@ -1,0 +1,1176 @@
+﻿@charset "utf-8";
+/*************************************
+* content:iframe内公共元素：翻页、表单控件、icon样式、步骤条、表单提示信息、图文模块、盒子box、列表+表单、弹出层
+************************************/
+/*===========翻页=========*/
+.page {
+	width:100%;
+	padding:10px 0 15px 0;
+	overflow:hidden;
+}
+.page .inner {
+	float:right;
+	text-align:center;
+	margin:auto;
+	clear:both;
+	overflow:hidden;
+}
+.page a, .page a.active, .page span {
+	float:left;
+	display:inline-block;
+	text-align:center;
+	text-decoration:none;
+	width:16px;
+	height:22px;
+	line-height:22px;
+	color:#6b6b6b;
+	padding:0 1px;
+	margin:0 2px;
+	border:1px solid #DDDDDD;
+}
+.page a:hover {
+	border:1px solid #9ec17e;
+}
+.page a.active {
+	font-weight:bold;
+	color:#D14041;
+}
+.page a.first, .page a.end, .page .firstgray, .page .endgray {
+	width:54px;
+	height:21px;
+	margin-right:10px;
+}
+.page a.first, .page .firstgray {
+	padding:1px 0 0 10px;
+}
+.page a.end, .page .endgray {
+	padding:1px 10px 0 0;
+}
+.page a.first {
+	background:url(../images/common/page_bg.gif) 8px 8px no-repeat;
+}
+.page a.end {
+	background:url(../images/common/page_bg.gif) 52px -82px no-repeat;
+}
+.page .firstgray {
+	background:url(../images/common/page_bg.gif) 12px -52px no-repeat;
+}
+.page .endgray {
+	background:url(../images/common/page_bg.gif) 48px -142px no-repeat;
+}
+.page .slh {
+	border:none;
+	background:url(../images/common/page_bg.gif) 4px -170px no-repeat;
+}
+/*=========表单控件=========*/
+/*input*/
+.input{
+	float:left;
+	color:#979797;
+	height:16px;
+	padding:2px 5px 0 5px;
+	margin-right:5px;
+	font-family:Tahoma;
+}
+/* 时间输入宽度 */
+.w44 {
+	width:44px;
+}
+/*textarea*/
+.textarea {
+	padding:2px 5px 0;
+	width:400px;
+	height:85px;
+	margin-right:5px;
+	overflow:hidden;
+}
+/*带日历的input框*/
+.timearea {
+	position:relative;
+	float:left;
+	width:96px;
+	background:#fff;
+	border:1px solid #E5E5E5;
+}
+.timearea input {
+	margin-right:0;
+	width:67px;
+	border:none;
+}
+/*输入时间的input框*/
+.timearea2 {
+	position:relative;
+	float:left;
+	width:68px;
+	background:#fff;	
+}
+.timearea2 input {
+	margin:0;
+	width:67px;
+	border:1px solid #E5E5E5;
+}
+/*模拟下拉*/
+.selectSim{
+	position:relative;
+	float:left;
+	width:165px;
+	padding-right:5px;
+	background:#fff;
+	border:1px solid #E5E5E5;
+}
+.selectSim input{
+	margin-right:0;
+	width:136px;
+	border:none;
+}
+.selectSimLayer {
+	position:absolute;
+	top:25;
+	left:-65px;
+	width:170px;
+	border:1px solid #9DC07C;
+	background:#F9FBF0;
+	z-index:99;
+	display:none;
+}
+.selectSimLayer li {
+	width:100%;
+}
+.selectSimLayer li a {
+	display:block;
+	margin:1px;
+	padding-left:15px;
+	height:22px;
+	position:relative;
+}
+.selectSimLayer li a:hover {
+	display:block;
+	background:#EDF4D5;
+	margin:1px;
+}
+.selectSimLayer li span{
+	position:absolute;
+	right:5px;
+	top:3px;
+	cursor:pointer;
+	text-indent:-9999em;
+	overflow:hidden;
+	background:url(../images/common/ico_gb.gif) 0 0 no-repeat;
+	width:16px;
+	height:16px;
+}
+/*按钮*/
+/*a标签模拟button*/
+.btnStyle, .btnStyle span{	
+	text-align:center;
+	line-height:25px;
+	height:25px;
+	display:inline-block;
+	text-align:center;
+	cursor:pointer;
+	width:auto;
+	color:#333;
+	margin-right:12px;
+	padding-left:5px;
+	background:url(../images/common/btn_bg.gif) 0 -120px no-repeat;
+}
+.btnStyle span{
+	padding:0 20px 0 15px;
+	margin:0;
+	background:url(../images/common/btn_bg.gif) 100% -150px no-repeat;
+}
+/*button标签*/
+.btn, .btn span{
+	float:left;
+	line-height:25px;
+	height:25px;
+	cursor:pointer;
+	color:#333;
+	width:auto;
+	border:none;
+	margin-right:22px;
+	padding:0;
+	background:url(../images/common/btn_bg.gif) 0 -120px no-repeat;
+	position:relative;
+}
+.btn span {
+	padding:0 20px;
+	margin:-2px -3px 0 3px;
+	margin:0\9 0\9 0 3px;
+	*margin:0 0 0 3px;
+	white-space:nowrap;
+	background-position:right -150px;
+}
+.btnGray {
+	background:url(../images/common/btn_bg.gif) 0 -60px no-repeat;
+}
+.btnGray span {
+	background-position:right -90px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .btn span{margin:-1px -3px 0 3px;}
+}
+.bigBtn {
+	background:url(../../skin/images/common/big_btn_bg.gif) no-repeat;
+	display:inline-block;
+	height:36px;
+	line-height:36px;
+	text-align:center;
+	width:147px;
+}
+/*===========间距设置=========*/
+.pL109 {
+	padding-left:109px;
+}
+.pL129 {
+	padding-left:129px;
+}
+.pL201 {
+	padding-left:201px;
+}
+.pL137 {
+	padding-left:137px;
+}
+/*按钮区*/
+.btnArea {
+	padding-top:15px;
+	padding-bottom:15px;
+	margin:15px 0;
+	background:url(../../skin/images/common/bg_btnarea2.gif) 0 0 repeat-x;
+	clear:both;
+}
+/*=========icon样式=========*/
+.icocom, .btnClose {
+	display:block;
+	width:16px;
+	height:18px;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.btnClose {
+	background:url(../images/common/ico_gb_2.gif) 3px 9px no-repeat;
+}
+.btnSelect {
+	background:url(../images/common/ico_xl3.gif) 3px 2px no-repeat;
+}
+.btnTime {
+	background:url(../images/common/ico_time.gif) 0 1px no-repeat;
+}
+/*=========步骤条=========*/
+.step {
+	width:557px;
+	height:31px;
+	margin-bottom:10px;
+	background:url(../images/common/step.gif) top left no-repeat;
+}
+.step li {
+	float:left;
+	height:31px;
+	padding-left:58px;
+	position:relative;
+}
+.step li a {
+	height:31px;
+	line-height:31px;
+	color:#999999;
+}
+.step li.step1 {
+	width:79px;
+}
+.step li.step2 {
+	width:81px;
+}
+.step li.step3{
+	width:81px;
+}
+.step li.step4 {
+	width:84px;
+}
+.step li a.active{
+	color:#3f3f3f;	
+	position:absolute;
+	padding-left:58px;
+	left:0;
+	top:0;	
+}
+.step li.step1 a.active {
+	width:80px;
+	background:url(../images/common/step.gif) left -37px no-repeat;
+}
+.step li.step2 a.active {
+	width:82px;
+	background:url(../images/common/step.gif) -138px -37px no-repeat;
+}
+.step li.step3  a.active {
+	width:81px;
+	background:url(../images/common/step.gif) -278px -37px no-repeat;
+}
+.step li.step4  a.active {
+	width:85px;
+	left:-1px;
+	background:url(../images/common/step.gif) -417px -37px no-repeat;
+}
+/*=======表单提示信息========*/
+.tsarea {
+	*float:left;
+	display:table-cell;
+	line-height:16px;
+	padding:1px 5px 1px 0;
+	padding:3px\9 5px 0 0;
+	*padding:3px 5px 0 0;
+	background:#fff8d5;
+	border:1px solid #ffe3aa;
+	overflow:hidden;
+}
+.tscw, .tszq {
+	*float:left;
+	display:table-cell;
+	padding:0 0 0 17px;
+	margin:-1px 0 0 0;
+	color:#6d914f;
+	background:url(../images/common/ico_ts.gif) 0 -1px no-repeat;
+	background-position:0 0;
+	background-position:0 -1px\9;
+	*background-position:0 -1px;
+}
+.tszq {
+	background:url(../images/common/ico_dh.gif) 0 2px no-repeat;
+}
+/*===========图文模块=========*/
+.picText {
+	float:left;
+	width:100%;
+}
+.picText dl {
+	float:left;
+	width:69%;
+	display:inline;
+}
+.picText .pic {
+	float:right;
+	width:30%;
+	display:inline;
+}
+/*=========盒子box1,绿色=========*/
+.box1 {
+	width:100%;
+	margin-bottom:10px;
+	overflow:hidden;
+}
+.box1 .tt, .box1 .bt {
+	position:relative;
+	clear:both;
+	margin:0 5px;
+}
+.box1 .tt, .box1 .tt h3, .box1 .tt div, .box1 .tt div a {
+	height:26px;
+	line-height:26px;
+}
+.box1 .tt h3, .box1 .tt div, .box1 .bt p, .box1 .bt div {
+	position:absolute;
+	overflow: hidden;
+}
+.box1 .tt h3, .box1 .bt p {
+	padding:0 0 0 10px;
+	margin:0 0 0 -5px;
+}
+.box1 .tt div, .box1 .bt div {
+	right:0;
+	margin:0 -5px 0 0;
+	_margin:0 -6px 0 0;
+	padding:0 6px 0 0;
+}
+/*=======系统信息界面,刷新按钮=======*/
+.box1 .tt .operate a {
+	padding-top:2px;
+	color:#fff;
+}
+.box1 .tt .operate a:hover {
+	text-decoration:underline;
+}
+.box1 .tt .operate a.refresh {
+	background:url(../images/common/refresh_btn.gif) no-repeat;
+	color:#000;
+	display:block;
+	height:20px;
+	line-height:20px;
+	margin-top:3px;
+	padding:0 0 0 7px;
+	width:65px;
+	text-align:center;
+}	
+/*模块1->标题*/
+.box1 .tt {
+	background:url(../images/common/bg_box.gif) 0 -141px repeat-x;
+}
+.box1 .tt h3 {
+	position:absolute;
+	z-index:2;
+	font-size:12px;
+	font-weight:bold;
+	padding-top:0 !important;
+	padding-top:1px;
+	background:url(../images/common/bg_box.gif) 0 -67px no-repeat;
+	overflow:hidden;
+	color:#35587a;
+}
+.box1 .tt div{
+	background:url(../images/common/bg_box.gif) 100% -104px no-repeat;
+}
+.box1 .tt div a {
+	padding-top:2px;
+	color:#fff;
+}
+.box1 .tt div a:hover {
+	text-decoration:underline;
+}
+/*模块1->底部*/
+.box1 .bt, .box1 .bt p, .box1 .bt div {
+	height:7px;
+	line-height:7px;
+}
+.box1 .bt {
+	background:url(../images/common/bg_box.gif) 0 0 repeat-x;
+}
+.box1 .bt p {
+	background:url(../images/common/bg_box.gif) 0 -28px no-repeat;
+	overflow: hidden;
+}
+.box1 .bt div {
+	background:url(../images/common/bg_box.gif) 100% -48px no-repeat;
+}
+/*模块1->中间内容*/
+.box1 .ct {
+	background:#f7f7f7 url(../images/common/bg_boxr.gif) 100% 0 repeat-y;
+	_zoom:1;
+}
+.box1 .ct .main {
+	padding:0 6px;
+	_zoom:1;
+	background:url(../images/common/bg_boxl.gif) 0 0 repeat-y;
+	overflow:hidden;
+}
+/*无标题圆角模块*/
+.box2 {
+	width:100%;
+	margin-bottom:10px;
+	overflow:hidden;
+}
+.box2 .tt, .box2 .bt {
+	position:relative;
+	clear:both;
+	margin:0 5px;
+}
+.box2 .tt, .box2 .tt h3, .box2 .tt div, .box2 .tt div a {
+	height:6px;
+	line-height:6px;
+}
+.box2 .tt h3, .box2 .tt div, .box2 .bt p, .box2 .bt div {
+	position:absolute;
+	overflow: hidden;
+}
+.box2 .tt h3, .box2 .bt p {
+	padding:0 0 0 10px;
+	margin:0 0 0 -5px;
+}
+.box2 .tt div, .box2 .bt div {
+	right:0;
+	margin:0 -5px 0 0;
+	_margin:0 -6px 0 0;
+	padding:0 6px 0 0;
+}
+/*模块2->标题*/
+.box2 .tt {
+	background:url(../images/common/bg_box2.gif) 0 -101px repeat-x;
+}
+.box2 .tt h3 {
+	position:absolute;
+	z-index:2;
+	font-size:12px;
+	font-weight:normal;
+	padding-top:0 !important;
+	padding-top:1px;
+	background:url(../images/common/bg_box2.gif) 0 -27px no-repeat;
+	overflow:hidden;
+}
+.box2 .tt div{
+	background:url(../images/common/bg_box2.gif) 100% -64px no-repeat;
+}
+.box2 .tt div a {
+	padding-top:2px;
+	color:#fff;
+}
+.box2 .tt div a:hover {
+	text-decoration:underline;
+}
+/*模块2->底部*/
+.box2 .bt, .box2 .bt p, .box2 .bt div {
+	height:9px;
+	line-height:9px;
+}
+.box2 .bt {
+	background:url(../images/common/bg_box2.gif) 0 0 repeat-x;
+}
+.box2 .bt p {
+	background:url(../images/common/bg_box2.gif) 0 -9px no-repeat;
+	overflow: hidden;
+}
+.box2 .bt div {
+	background:url(../images/common/bg_box2.gif) 100% -18px no-repeat;
+}
+/*模块1->中间内容*/
+.box2 .ct {
+	background:#f7f7f7 url(../images/common/bg_box2r.gif) 100% 0 repeat-y;
+	_zoom:1;
+}
+.box2 .ct .main {
+	padding:0 6px;
+	_zoom:1;
+	background:url(../images/common/bg_box2l.gif) 0 0 repeat-y;
+	overflow:hidden;
+}
+/*===========列表+表单============*/
+/*表格外层*/
+.tableWrap {
+	width:100%;
+	margin-bottom:10px;
+	overflow:hidden;
+}
+/*表格外层->中间*/
+.tableWrap .ct {
+	background:#f7f7f7 url(../images/common/bg_tabler.gif) 100% 0 repeat-y;
+	_zoom:1;
+}
+.tableWrap .ct .main {
+	padding:0 3px 0 1px;
+	_zoom:1;
+	background:url(../images/common/bg_tablel.gif) 0 0 repeat-y;
+	overflow:hidden;
+}
+/*表格外层->底部*/
+.tableWrap .bt, .tableWrap .bt p, .tableWrap .bt div {
+	height:7px;
+	line-height:7px;
+}
+.tableWrap .bt {
+	background:url(../images/common/bg_table.gif) 0 0 repeat-x;
+	position:relative;
+	clear:both;
+	margin:0 5px;
+}
+.tableWrap .bt p {
+	background:url(../images/common/bg_table.gif) 0 -28px no-repeat;
+	overflow: hidden;
+	padding:0 0 0 10px;
+	margin:0 0 0 -5px;
+	position:absolute;
+}
+.tableWrap .bt div {
+	position:absolute;
+	overflow: hidden;
+	right:0;
+	margin:0 -5px 0 0;
+	_margin:0 -6px 0 0;
+	padding:0 6px 0 0;
+	background:url(../images/common/bg_table.gif) 100% -48px no-repeat;
+}
+/*表头开始*/
+.tableWrap table caption{
+	clear:both;
+	margin:0;
+	padding:0;
+	background:url(../images/common/bg_table.gif) 0 -141px repeat-x;
+}
+.tableWrap table caption, .tableWrap table caption .tit, .tableWrap table caption .operate, .tableWrap table caption .operate a {
+	height:26px;
+	line-height:26px;
+}
+.tableWrap table caption span.tit {
+	z-index:2;
+	font-size:12px;
+	position:relative;
+	margin-left:-1px;
+	float:left;
+	padding:0 0 0 10px !important;
+	padding:1px 0 0 10px;
+	background:url(../images/common/bg_table.gif) 0 -67px no-repeat;
+	color:#35587a;
+}
+.tableWrap table caption span.tit strong{
+	font-weight:bold;
+}
+.tableWrap table caption .operate {
+	padding:0 6px 0 0;
+	position:relative;
+	float:right;
+	margin-right:-3px;
+	background:url(../images/common/bg_table.gif) 100% -104px no-repeat;
+}
+.tableWrap table caption .operate a {
+	padding-top:2px;
+	color:#fff;
+}
+.tableWrap table caption .operate a:hover {
+	text-decoration:underline;
+}
+.tableWrap table caption .operate a.addLink {
+	background:url(../images/common/add_btn.gif) no-repeat;
+	color:#000;
+	display:block;
+	height:20px;
+	line-height:20px;
+	margin-top:3px;
+	padding:0 0 0 7px;
+	width:65px;
+}
+.tableWrap table caption .operate a.refresh {
+	background:url(../images/common/refresh_btn.gif) no-repeat;
+	color:#000;
+	display:block;
+	height:20px;
+	line-height:20px;
+	margin-top:3px;
+	padding:0 0 0 7px;
+	width:65px;
+}
+/*表头结束*/
+/*表尾开始*/
+.tableWrap table tfoot tr{
+	background:none;
+}
+/*表尾结束*/
+/*列表*/
+.tableList {
+	background:#f7f7f7;
+}
+.tableList table{
+	width:100%;	
+}
+.tableList table tr th, .tableList table tr td{
+	line-height:27px;
+	padding:0 6px;
+}
+.tableList table tr {
+	background:url(../images/common/bg_dot2.gif) 0 bottom repeat-x;
+}
+.tableList table tr th {
+	background:url(../images/common/bg_th.gif) 100% 100% no-repeat;
+	font-weight:normal;
+}
+.tableList table tr th.last {
+	background:url(../images/common/bg_th2.gif) 100% 100% repeat-x;
+}
+.tableList table .num input {
+	text-align:right;
+}
+.tableList table tr td a, .nrarea .tableList table tr td a {
+	color:#506eab;
+	margin-right:10px;
+	text-decoration:none;
+}
+.tableList table tr td a:hover {
+	text-decoration:underline;
+}
+.tableList table tr.even td{
+	background:#fff url(../images/common/bg_dot2.gif) 0 bottom repeat-x;
+}
+.tableList table tr.odd td{
+	background:#f5f5f5 url(../images/common/bg_dot2.gif) 0 bottom repeat-x;
+}
+.tableList table tr.highLight td{
+	background:#fff8d5 url(../images/common/bg_dot2.gif) 0 bottom repeat-x;
+}
+.tableList table tr.last {
+	background-image:none;	
+}
+.vTopTd td {
+	vertical-align:top;	
+}
+/*表单*/
+.tableForm table{
+	width:100%;	
+}
+.tableForm table tr th {
+	text-align:right;
+	width:170px;
+	font-weight:normal;
+}
+.tableForm table tr td {
+	text-align:left;
+}
+.tableForm th, .tableForm td {
+	padding-top:3px;
+	padding-bottom:3px;
+}
+.tableForm table td .note{
+	vertical-align:bottom;	
+}
+/*===========弹出层==========*/
+/*蒙版开始*/
+#mark {
+	height:100%; 
+	width:100%; 
+	background:#fff;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:100;
+	display:none;
+	filter:alpha(opacity=70); /* IE */ 
+	-moz-opacity:0.7; /* Moz + FF */ 
+	opacity: 0.7; /* 支持CSS3的浏览器（FF 1.5也支持）*/ 
+}
+/*蒙版结束*/
+.popLayer {
+	display:none;
+	width:450px;
+	overflow:hidden;
+	z-index:2;
+}
+.popLayer .tt, .popLayer .bt {
+	position:relative;
+	clear:both;
+	margin:0 5px;
+	z-index:1;
+}
+.popLayer .tt, .popLayer .tt .operate{
+	height:27px;
+	line-height:27px;
+}
+.popLayer .tt h3, .popLayer .tt .operate, .popLayer .bt p, .popLayer .bt div {
+	position:absolute;
+	overflow: hidden;
+}
+.popLayer .tt .operate, .popLayer .bt div {
+	right:0;
+	margin:0 -5px 0 0;
+	padding:0 6px 0 0;
+}
+.popLayer .tt h3, .popLayer .bt p {
+	padding:0 0 0 10px;
+	margin:0 0 0 -5px;
+}
+.popLayer .tt {
+	background:url(../images/common/bg_tsk2.gif) 0 -101px repeat-x;
+}
+.popLayer .tt h3 {
+	z-index:2;
+	font-size:12px;
+	padding-top:0 !important;
+	padding-top:1px;
+	color:#fff;
+	font-weight:bold;
+	background:url(../images/common/bg_tsk2.gif) 0 -27px no-repeat;
+}
+.popLayer .tt .operate {
+	background:url(../images/common/bg_tsk2.gif) 100% -64px no-repeat;
+}
+.popLayer .tt .operate a {
+	padding-top:2px;
+}
+.popLayer .tt .operate a:hover {
+	text-decoration:underline;
+}
+.popLayer .bt, .popLayer .bt p, .popLayer .bt div {
+	height:4px;
+	line-height:4px;
+}
+.popLayer .bt {
+	background:url(../images/common/bg_tsk2.gif) 0 0 repeat-x;
+}
+.popLayer .bt p {
+	background:url(../images/common/bg_tsk2.gif) 0 -9px no-repeat;
+}
+.popLayer .bt div {
+	background:url(../images/common/bg_tsk2.gif) 100% -18px no-repeat;
+}
+.popLayer .ct {
+	background:#f7f7f7 url(../images/common/bg_tskr_2.gif) 100% 0 repeat-y;
+	_zoom:1;
+}
+.popLayer .ct .main {
+	padding:0;
+	background:url(../images/common/bg_tskl_2.gif) 0 0 repeat-y;
+	_zoom:1;
+	overflow:hidden;
+}
+.popLayer .ct .nrarea {
+	padding:10px;
+}
+.popLayer .ct a {
+	color:#6d914f;
+}
+.popLayer .ct h5{
+	clear:both;
+	font-size:12px;
+	color:#6D914F;
+	background:transparent url(../images/common/ico_dot.gif) no-repeat scroll 0 -24px;
+	font-weight:bold;
+	padding-left:15px;
+}
+/*弹出层->警告提示*/
+.popLayer .btnConfirm{
+	padding-left:106px;
+}
+.popLayer p.confirmInfo {
+	padding:25px 0 28px 65px;
+	background:url(../../skin/images/common/ico_tsjg.gif) 10px 15px no-repeat;
+}
+.popLayer div.confirmInfo {
+	background:url(../../skin/images/common/pop_error.gif) 10px 0px no-repeat;
+	padding-left:54px;
+}
+.popLayer div.confirmInfo h3 {
+	font-weight:700;
+	padding:7px 0;
+}
+/* 弹出层-> 表格 */
+.popLayer .popTable th {
+	font-weight:normal;
+	text-align:right;
+}
+.popLayer .popTable th , .popLayer .popTable td {
+	padding:3px 0;
+}
+.popLayer .popTable td.disabled {
+	color:#CCC;
+	padding-left:4px;
+}
+.quideBg .content td.disabled {
+	color:#CCC;
+}
+.popLayer .popTable td.enable {
+	color:#000;
+}
+.popLayer .popTable td.enable1 {
+	color:#000;
+	padding-left:4px;
+}
+
+/*弹出层->图文*/
+.popLayer .picText{
+	margin:0 0 10px 0;	
+}
+.popLayer .picText dl {
+	width:520px;
+	margin-left:10px;
+}
+.popLayer .picText dt{
+	color:#464646;
+	font-weight:normal;	
+	margin-bottom:10px;	
+}
+.popLayer .picText dl dt span{
+	font-weight:bold;
+	font-size:14px;
+}
+.popLayer .picText .pic {
+	width:95px;
+	margin-right:20px;
+}
+
+/* 系统信息列表 */
+.hardwareList {
+	margin:20px 0;
+	overflow:hidden;
+	_zoom:1;
+}
+.hardwareList li {
+	background:url(../../skin/images/common/line.gif) repeat-y 100% 0;
+	float:left;
+	height:128px;
+	padding-right:8px;
+}
+.hardwareList li.last {
+	background:none;
+	padding-right:0;
+}
+.hardwareList li div {
+	padding-left:66px;
+}
+.hardwareList li .cpu {
+	background:url(../../skin/images/common/cpu.gif) no-repeat 20px 4px;
+}
+.hardwareList li .memory {
+	background:url(../../skin/images/common/memory.gif) no-repeat 14px 4px;
+}
+.hardwareList li .hardDisk {
+	background:url(../../skin/images/common/harddisk.gif) no-repeat 18px 10px;
+	padding-left:74px;
+}
+.hardwareList li .capacity {
+	border:1px solid #b2b2b2;
+	height:10px;
+	overflow:hidden;
+	width:170px;
+}
+.hardwareList li .capacity span {
+	background:url(../../skin/images/common/line2.gif) repeat-x;
+	display:inline-block;
+	height:10px;
+}
+.hardwareList li h4 {
+	font-size:14px;
+}
+.hardwareList li p {
+	color:#999;
+}
+.w54 {
+	width:54px;
+}
+.w27 {
+	width:27px;
+}
+.w89 {
+	width:89px;
+}
+/* 系统自检 */
+.txtCont {
+	padding-bottom:10px;
+}
+.txtCont p {
+	color:#999;
+}
+.txtCont p.vLine {
+	background-color:#dbdbdb;
+	height:1px;
+	overflow:hidden;
+	margin:10px auto;
+}
+.stateUl {
+	margin:10px 0;
+}
+.stateUl li {
+	font-size:14px;		
+}
+.stateUl li.first {
+	border-right:1px solid #d5eae6;
+	float:left;
+	height:43px;
+	padding-right:16px;
+	text-align:right;
+	margin-right:20px;
+	width:140px;
+}
+.stateUl li strong {
+	color:#378c09;
+	font-size:14px;
+	font-weight:700;
+}
+/*系统自检修改后添加的内容样式 start */
+.nrarea2 {
+	padding:15px 0;
+}
+.nrarea2 p {
+	height:40px;
+	line-height:40px;
+	padding-left:70px;
+	background:url(../images/common/check_succes.gif) no-repeat 20px center;
+	font-size:14px;
+}
+.nrarea2 .error {
+	background:url(../images/common/check_error.gif) no-repeat 20px center;
+}
+.nrarea2 ul {
+	width:100%;
+	text-indent:70px;
+}
+.nrarea2 ul li span {
+	color:#df2735;
+}
+.nrarea2 .btnA {
+	padding:30px 0 0 0;
+	text-align:center;
+	background:url(../images/common/bg_btnarea2.gif) repeat-x left 15px;
+}
+.nrarea2 .btnA .btn {
+	float:none;
+}
+/*系统自检修改后添加的内容样式 end*/
+
+/* 配置文件 */
+.fileCont {
+	margin:20px auto 0;
+	width:560px;
+}
+.fileCont p {
+	padding:10px 0;
+}
+.fileCont p.clearfix {
+	padding-left:59px;
+}
+.fileCont p label {
+	float:left;
+}
+.fileCont p .input {
+	width:324px;
+}
+/* 接口配置 */
+.box3 {
+	width:800px;
+	margin:20px auto 0;
+}
+.box3 h3 {
+	background:url(../../skin/images/common/dot.gif) repeat-x 0 center;
+	color:#506eab;
+	font-weight:700;
+}
+.box3 h3 span {
+	background:#fff;
+	display:inline-block;
+	padding-right:10px;
+}
+.table th , .table td {
+	padding:3px;
+}
+.table th {
+	font-weight:normal;
+	text-align:right;
+}
+.table td .ipInput {
+	width:100px;
+}
+.box3 .btnArea {
+	margin:15px 0 0;
+	padding-top:20px;
+}
+.delImg {
+	margin-right:10px;
+}
+/* 统计日志 */
+.quickSearch table {
+	width:100%;
+}
+.quickSearch th {
+	font-weight:normal;
+	text-align:right;
+}
+.quickSearch td {
+	padding:0 1px;
+	*padding:0;
+	_padding:0 1px;
+}
+/* 曲线图 */
+.graph {
+	clear:both;	
+}
+.graph .graphTit {
+	font-size:14px;
+	font-weight:700;
+	margin:10px 0;
+}
+.graph .graphBtn {
+	height:25px;
+	margin-bottom:5px;
+}
+.graph .graphBtn a {
+	float:right;
+}
+.graph .graphImg {
+
+}
+
+/*向导页面相关样式开始*/
+/*头部高度更改*/
+.headerQuide .header {
+	height:56px;
+	overflow:hidden;
+}
+/*向导背景*/
+.quideBg {
+	height:99.5%;
+	border:1px solid #e0e0e0;
+	background:url(../images/common/quide_bg.gif) repeat-x left top;
+}
+.quideBgL {
+	height:100%;
+	background:url(../images/common/quide_bg_l.jpg) no-repeat left top;
+}
+.quideBgL2 {
+	height:100%;
+	background:url(../images/common/quide_bg_2.gif) no-repeat left top;
+}
+.quideBgR {
+	height:100%;
+	background:url(../images/common/quide_bg_r.gif) no-repeat 250px top;
+}
+/*向导内容*/
+.quide {
+	width:538px;
+	margin:0 auto;
+	padding-top:85px;
+}
+.quide h3 {
+	height:28px;
+	line-height:28px;
+	text-indent:-999px;
+}
+/*标题*/
+.quide .set1 {
+	background:url(../images/common/quide_h31.gif) no-repeat 5px top;
+}
+.quide .set2 {
+	background:url(../images/common/quide_h32.gif) no-repeat left top;
+}
+.quide .set3 {
+	background:url(../images/common/quide_h33.gif) no-repeat left top;
+}
+.quide .content {
+	padding-bottom:15px;
+	border-bottom:1px solid #dbdbdb;
+}
+.quide .content .word {
+	line-height:1.8;
+	color:#333;
+	margin-top:20px;
+}
+.quide .button {
+	margin-top:18px;
+}
+.quide .button a {
+	margin-right:10px;
+}
+.quide .tip {
+	margin-top:60px;
+}
+.quide .tip input {
+	vertical-align:text-bottom;
+}
+.quide table {
+	width:100%;
+	margin-top:10px;	
+	line-height:30px;
+}
+.quide .selectSim {
+	width:155px;
+	border:1px solid #d4d4d4;
+}
+.quide .selectSim input {
+	width:126px;
+}
+.quide .selectSim .selectSimLayer {
+	width:160px;
+	border:1px solid #d4d4d4;
+	background:#fbfbfb;
+}
+.quide2 .content .word {
+	margin-top:0;
+	color:#898989;
+}
+.quide2 .button {
+	margin-left:25%;
+}
+/*向导2－窗口切换*/
+.quide2 .tcp,.quide2 .udp {
+	height:30px;
+}
+.quide2 .udp .input,.quide2 .tcp .input {
+	_vertical-align:top;
+}
+.quide2 .udp .input {
+	display:none;
+}
+/*向导页面相关样式结束*/
+.pageCss{
+	margin-left:530px;
+}

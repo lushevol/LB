@@ -1,0 +1,466 @@
+@charset "utf-8";
+/*************************************
+* date:2009-11-10
+* content:reset css,base css and template css
+************************************/
+/*=====================reset css start=========================*/
+html,body,div,p,ul,ol,dl,dt,dd,form,h1,h2,h3,h4,h5,h6,input,fieldset,legend,optgroup{
+	margin:0;
+	padding:0;
+}
+h1,h2,h3,h4,h5,h6,em,strong, input,textarea{
+	font-family:arail,宋体;
+	font-size:12px;
+	font-style:normal;
+	font-weight:normal;
+}
+a img{
+	border:0;
+}
+a{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+/*=======color======*/
+/*表单中必填项文字*/
+.required{
+	color:#ef2415;
+}
+/*注释文字*/
+.note{
+	color:#999;
+}
+.note img {
+	vertical-align:middle;
+}
+/* 红色字体 */
+.fontRed {
+	color:#df2735;	
+}
+
+/*====layout style====*/
+/*------表格-----*/
+table{
+	border:0;
+	border-collapse:collapse;
+}
+table th,table td{
+	text-align:left;
+}
+/*列表-操作列*/
+table .operate{
+	text-align:center;
+}
+/*列表-数字列*/
+table .num{
+	text-align:right;
+}
+/*左右表格中，文字右对齐列*/
+table .col01{
+	text-align:right;
+}
+
+/*---除表格外的文字对齐---*/
+.txtLeft{
+	text-align:left;
+}
+.txtCenter{
+	text-align:center;	
+}
+.txtRight{
+	text-align:right;
+}
+
+/*----浮动----*/
+.fl {
+	float:left;
+}
+.fr {
+	float:right;
+}
+input.fno {
+	float:none;
+}
+
+/*----清楚浮动1----*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display:inline-block;
+}  
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	clear:both;
+	display:block;
+} 
+/* End hide from IE-mac */
+
+/*----清楚浮动2----*/
+.overflow{
+	overflow:auto;
+	zoom:1;
+}
+/*=====================reset css end=======================*/
+/*=====================base css start=======================*/
+html, body {
+	font-family:Arial, "宋体";
+	font-size:12px;
+	color:#333;
+	line-height:21px;
+	background:#fff;
+}
+ul,li{
+	list-style:none;	
+}
+input, select, textarea {
+	font-size:12px;
+	vertical-align:middle;
+}
+.input,textarea {
+	background-color:#fff;
+	border:1px solid #d5d5d5;
+}
+a {
+	color:#343434;
+}
+.active{
+	font-weight:bold;	
+}
+/*表格中的文字顶部对齐*/
+table .txtV{
+	vertical-align:top;	
+}
+/*=====================base css end=======================*/
+/*======================template css start=======================*/
+/*====头部====*/
+.header {
+	height:80px;
+	overflow:hidden;
+	background:url(../images/common/bg_header.gif) 0 0 repeat-x;
+}
+.header .tt {
+	clear:both;
+	height:49px;
+}
+.header .tt h1 {
+	padding:0;
+}
+.header .tt h1 a {
+	float:left;
+	display:block;
+	text-indent:-9999px;
+	width:250px;
+	height:46px;
+	/*background:url(../images/common/logo_kylin.png) 0 0 no-repeat;*/
+	overflow:hidden;
+}
+/*头部->用户区*/
+.header .userArea {
+	float:right;
+	padding-top:9px;
+}
+.header .userArea ul {
+	float:left;
+	padding:0 19px 0 0;
+}
+.header .userArea ul li {
+	float:left;
+	padding:0 6px;
+	background:url(../images/common/bg_line.gif) 100% 4px no-repeat;
+}
+.header .userArea ul li.exit {
+	background:none;
+}
+/*头部->搜索栏目区*/
+.header ct {
+	width:100%;
+	overflow:hidden;
+	height:32px;
+}
+/*快捷菜单*/
+.quickMenu {
+	float:left;
+	height:36px;
+	margin-left:161px;
+	_margin-left:81px;
+	background:none;
+	overflow:hidden;
+}
+.quickMenu ul li {
+	float:left;
+	padding:4px 5px 0 0;
+}
+.quickMenu ul li a {
+	float:left;
+	height:23px;
+	background:url(../images/common/bg_gnx2.gif) 0 -72px no-repeat;
+}
+.quickMenu ul li a span {
+	display:block;
+	padding:0 12px;
+	line-height:23px;
+	cursor:pointer;
+	background:url(../images/common/bg_gnx2.gif) 100% -108px no-repeat;
+}
+.quickMenu ul li.on a, .quickMenu ul li a:hover {
+	text-decoration:none;
+	background:url(../images/common/bg_gnx2.gif) 0 0 no-repeat;
+}
+.quickMenu ul li.on a span, .quickMenu ul li a:hover span {
+	background:url(../images/common/bg_gnx2.gif) 100% -36px no-repeat;
+}
+/*时间*/
+.time{
+	float:right;
+	margin:5px 25px 0 0;
+	padding:0 0 0 23px;
+	background:url(../images/common/ico_time1.gif) 0 3px no-repeat;
+}
+/*头部->弹出层*/
+.popList {
+	width:90px;
+	border:1px solid #9DC07C;
+	background:#F9FBF0;
+	position:absolute;
+	right:6px;
+	top:0px;
+	z-index:99;
+}
+.popList li {
+	float:none;
+}
+.popList li a {
+	display:block;
+	margin:1px;
+	padding-left:8px;
+	padding-right:8px;
+}
+.popList li a:hover {
+	display:block;
+	background:#EDF4D5;
+	margin:1px;
+}
+/*搜索下拉层*/
+#searchDiv {
+	display:none;
+}
+.searchList {
+	left:7px;
+	top:0px;
+}
+.searchList li {
+	width:100%;
+	float:left;
+}
+/*=====底部版权====*/
+.footer{
+	clear:both;
+	background:#f1f1f1;
+	color:#7a7a7a;
+}
+.footer p{
+	text-align:center;
+	line-height:30px;
+}
+/*=====中间内容====*/
+.center{}
+/*左侧菜单*/
+.sidePart {
+	float:left;
+	position:relative;
+	width:161px;
+	bottom:0;
+	background:#f9f9f9 url(../images/common/bg_size1.gif) 100% 100% no-repeat;
+}
+.navWrap {
+	clear:both;
+	width:148px;
+	padding-left:7px;
+	overflow:hidden;
+}
+.navWrap h3{
+	font-size:12px;
+}
+.navWrap .navFirst {
+	clear:both;
+	width:100%;
+}
+/*菜单->一级*/
+.navFirst h3 {
+	height:27px;
+	line-height:27px;
+	*width:148px;
+	*float:left;
+}
+.navFirst h3 a {
+	cursor:pointer;
+	float:left;
+	display:block;
+	width:100%;
+	color:#333;
+	padding-left:10px;
+	background:url(../images/common/bg_sizeh3.gif) 0 -33px no-repeat;
+}
+.navFirst h3 a img{
+	float:left;
+	margin:6px 7px 0 5px;
+}
+.navFirst h3 a.active {
+	color:#fff;
+	font-weight:700;
+	background:url(../images/common/bg_sizeh3.gif) 0 -113px no-repeat;
+	height:32px;
+	line-height:32px;
+}
+.navFirst h3.first a {
+	background:url(../images/common/bg_sizeh3.gif) 0 0 no-repeat;
+}
+.navFirst h3.first a.active {
+	background:url(../images/common/bg_sizeh3.gif) 0 -76px no-repeat;
+}
+/*一级菜单标题箭头*/
+.navFirst .btnOpen {
+	float:right;
+	height:26px;
+	padding-top:4px;
+	padding-right:5px;
+}
+.navFirst .btnOpen a {
+	width:16px;
+	height:18px;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+/*二级三级四级菜单*/
+.navSec .tit{
+	clear:both;
+	width:148px;
+	margin:0 auto;
+}
+/*菜单->二级*/
+.navWrap .navSec {
+	clear:both;
+	overflow:hidden;
+	padding:6px 0 6px 5px;
+	background:#d7d7d7 url(../images/common/left_nav_bg.gif) repeat-x 0 bottom;
+	display:none;
+	_zoom:1;
+}
+.navSec li{
+	height:32px;
+	width:140px;
+	float:left;
+}
+.navSec li a{
+	color:#333;
+	height:32px;
+	width:111px;
+	float:left;
+	line-height:28px;
+	padding-left:29px;
+}
+
+/*二级菜单当前状态*/
+.navSec a.active {
+	color:#fff;
+	background:url(../images/common/btn_bg02.gif) 0 -34px no-repeat;
+	font-weight:normal;
+}
+/*右侧内容*/
+.mainPart {
+	float:left;
+	overflow:hidden;
+	background:url(../images/common/bg_mainPart_l.gif) 0 0 no-repeat;
+}
+.mainPart iframe.all{
+	float:left;
+	margin:0 0 0 1px;
+}
+/*右侧-底部*/
+.mainPartBot {
+	background:url(../images/common/bg_size2.gif) left 3px repeat-x;
+	height:4px;
+	clear:both;
+	overflow:hidden;
+	position:relative;
+}
+.mainPartBot p{
+	position:absolute;
+	left:0;
+	top:0;
+	width:4px;
+	height:4px;
+	background:url(../images/common/bg_mainBotFr.gif) left top no-repeat;
+}
+/*右侧-面板*/
+.mainPartPanel {
+	background:url(../images/common/bg_mainpart.gif) 0 0 repeat-x;
+	position:fixed;
+	top:0;
+	padding-top:5px;
+	left:0;
+	width:100%;
+	z-index:99;
+}
+/* 修正IE6振动bug */
+* html,* html body {
+	background-image:url(about:blank);
+	background-attachment:fixed;
+}
+/* IE6 头部固定 */
+* html .mainPartPanel {
+	position:absolute;
+	bottom:auto;
+	top:expression(eval(document.documentElement.scrollTop));
+}
+/* IE6 头部固定结束 */
+.mainPartPanel div.circle{
+	position:absolute;
+	top:0;
+	left:0;
+	height:5px;
+	background:url(../images/common/bg_panelcircle.gif) -1px 0 no-repeat;
+	width:10px;
+}
+.mainPartPanel h3{
+	height:30px;
+	overflow:hidden;
+	background-color:#f9f9f9;
+	border-bottom:1px solid #e6e6e6;
+	padding-left:15px;
+	line-height:30px;
+	font-size:14px;
+}
+/*ie6下遮挡select*/
+.mainPartPanel iframe {
+	width:100%;	
+	height:33px;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-1;
+	filter:Alpha(Opacity=0);
+}
+/*右侧-中部*/
+.mainPartCont{
+	padding:46px 0 0 16px;
+	width:800px;
+	display:inline-block;
+}
+/*没有头部固定面板时，中间内容的外层，取代mainPartCont的，start*/
+.mainPartContNoTop{
+	padding:16px 0 0 16px;
+	width:800px;
+	display:inline-block;
+}
+/*没有头部固定面板时，中间内容的外层，取代mainPartCont的，end*/

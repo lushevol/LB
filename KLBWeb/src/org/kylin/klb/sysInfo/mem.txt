@@ -1,0 +1,5 @@
+top - 10:24:25 up 30 days, 21:37,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks:  65 total,   1 running,  64 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.0% us,  0.0% sy,  0.0% ni, 99.9% id,  0.0% wa,  0.0% hi,  0.0% si
+Mem:   2056508k total,  2024272k used,    32236k free,    96732k buffers
+Swap:  2088440k total,      160k used,  2088280k free,   486844k cached

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+	<User>
+		<id>1</id>
+		<LoginName>admin</LoginName>
+		<UserName>admin1</UserName>
+		<PassWord>admin2</PassWord>
+		<Email>admin@kylin.cn</Email>
+	</User>
+	<User>
+		<id>2</id>
+		<LoginName>test</LoginName>
+		<UserName>test1</UserName>
+		<PassWord>test2</PassWord>
+		<Email>test1@kylin.cn</Email>
+	</User>
+</Root>
